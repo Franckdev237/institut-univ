@@ -45,3 +45,9 @@ voici les étapes dru rafaraichissement du site après modification
 - Le Robot GitHub (Action) : Dès qu'il reçoit ton code, il se réveille. Il télécharge tes fichiers, installe les dépendances, et lance le npm run build sur ses propres serveurs.
 
 - Mise en ligne : Une fois le build fini, il envoie les fichiers vers https://groupe-valerien-education.web.app/ automatiquement.
+
+
+
+git add .
+git commit -m "Ajout complet des 10 filières santé et correction build"
+git push
