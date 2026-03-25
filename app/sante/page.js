@@ -17,7 +17,7 @@ export default function SantePage() {
       image: "/9.jpg"
     },
     {
-      titre: "Odontostomatologie / Santé Bucco-dentaire",
+      titre: "Odontostomatologiess / Santé Bucco-dentaire",
       slogan: "Un beau sourire commence par une bouche saine.",
       description: "Spécialisez-vous dans la prévention et le traitement des pathologies des dents et des gencives.",
       points: ["Soins dentaires", "Chirurgie buccale", "Prothèses"],
