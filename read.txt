@@ -33,3 +33,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+j'ai relié mon dossier institut-univ(firebase) à Github pour non seulement permettre la sauvegarde des ficiers mais en plus un rafraichissement rapide du site après chaque modification
+
+voici les étapes dru rafaraichissement du site après modification
+
+- Sur ton PC (D:\institut-univ) : Tu modifies ton code (le texte, les images ou le logo) et tu fais Ctrl + S.
+
+- Vers GitHub : Tu envoies tes modifs avec: un git push.
+
+- Le Robot GitHub (Action) : Dès qu'il reçoit ton code, il se réveille. Il télécharge tes fichiers, installe les dépendances, et lance le npm run build sur ses propres serveurs.
+
+- Mise en ligne : Une fois le build fini, il envoie les fichiers vers https://groupe-valerien-education.web.app/ automatiquement.
