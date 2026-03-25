@@ -3,66 +3,60 @@ import React from 'react';
 export default function SantePage() {
   const filieres = [
     {
-      titre: "Médecin Généraliste",
-      slogan: "Le premier rempart pour la santé de la communauté.",
-      description: "Devenez un expert du diagnostic et du traitement. Une formation complète pour une vision globale du patient.",
-      points: ["Diagnostic précis", "Suivi thérapeutique", "Prévention active"],
-      image: "/7.jpg"
+      titre: "Aide-soignant",
+      slogan: "Servir, assister, soigner avec humanité.",
+      description: "La filière Aide-Soignant forme des professionnels capables d’accompagner, assister et prendre soin des patients dans les structures de santé, sous la supervision du personnel médical et paramédical.",
+      points: ["Hygiène et le confort du patient", "Assistance aux soins de base", "Accueil et l’accompagnement des malades","La surveillance de l’état général du patient"],
+      image: "/8.jpg"
     },
     {
       titre: "Pharmacie",
       slogan: "L'expertise du médicament au service du patient.",
       description: "Maîtrisez la science des médicaments, de leur conception à leur dispensation. Un rôle clé dans le conseil.",
       points: ["Pharmacologie", "Conseil patient", "Gestion d'officine"],
-      image: "/8.jpg"
+      image: "/9.jpg"
     },
     {
       titre: "Odontostomatologie / Santé Bucco-dentaire",
       slogan: "Un beau sourire commence par une bouche saine.",
       description: "Spécialisez-vous dans la prévention et le traitement des pathologies des dents et des gencives.",
       points: ["Soins dentaires", "Chirurgie buccale", "Prothèses"],
-      image: "/9.jpg"
+      image: "/10.jpg"
     },
     {
       titre: "Sage-Femme / Maïeutique",
       slogan: "Accompagner la vie dès ses premiers instants.",
       description: "Une formation d'excellence pour le suivi de la grossesse, l'accouchement et les soins post-nataux.",
       points: ["Suivi néonatal", "Obstétrique", "Accompagnement"],
-      image: "/13.jpg"
+      image: "/11.jpg"
     },
     {
       titre: "Techniciens de Laboratoire",
       slogan: "L'exactitude du diagnostic au service du médecin.",
       description: "Maîtrisez les analyses biologiques et chimiques pour aider au diagnostic des pathologies.",
       points: ["Hématologie", "Biochimie", "Microbiologie"],
-      image: "/14.jpg"
+      image: "/12.jpg"
     },
     {
       titre: "Ophtalmologie / Optométrie",
       slogan: "Préserver et corriger la vision pour mieux voir le monde.",
       description: "Spécialisez-vous dans les soins oculaires, la mesure de la vue et l'adaptation des lentilles et lunettes.",
       points: ["Examen de vue", "Pathologies oculaires", "Optométrie"],
-      image: "/15.jpg"
+      image: "/13.jpg"
     },
-    {
-      titre: "Kinésithérapie",
-      slogan: "Redonner le mouvement par le geste thérapeutique.",
-      description: "Apprenez les techniques de rééducation pour aider les patients à retrouver leur mobilité.",
-      points: ["Rééducation", "Thérapie manuelle", "Suivi sportif"],
-      image: "/10.jpg"
-    },
+    
     {
       titre: "Imagerie Médicale",
       slogan: "Voir l'invisible pour mieux soigner.",
       description: "Maîtrisez les technologies de pointe (Scanner, IRM, Radio) pour réaliser des images précises.",
       points: ["Radiologie", "Scanner & IRM", "Échographie"],
-      image: "/11.jpg"
+      image: "/15.jpg"
     },
     {
-      titre: "Gestion des Services de Santé",
-      slogan: "Administrer l'excellence pour des soins de qualité.",
-      description: "Formez-vous au management des structures hospitalières et à l'optimisation des services de santé.",
-      points: ["Management hospitalier", "Économie de santé", "Logistique"],
+      titre: "Santé Publique",
+      slogan: "Prévenir aujourd’hui pour protéger demain.",
+      description: "La filière Santé Publique forme des professionnels capables de prévenir les maladies, promouvoir la santé et améliorer le bien-être des populations.",
+      points: ["la prévention sanitaire", "l’éducation à la santé", "l’hygiène et l’assainissement", "la surveillance des problèmes de santé communautaire", "la gestion et l’organisation des actions de santé publique"],
       image: "/16.jpg"
     },
     {
@@ -70,14 +64,14 @@ export default function SantePage() {
       slogan: "L'art de soigner avec humanité et compétence.",
       description: "Devenez le pilier des services de soins. Apprenez les gestes techniques et la gestion des urgences.",
       points: ["Soins cliniques", "Pratique hospitalière", "Éthique"],
-      image: "/12.jpg"
+      image: "/17.jpg"
     }
   ];
 
   return (
     <main className="min-h-screen bg-white">
       <header className="relative bg-emerald-900 py-32 text-center text-white overflow-hidden">
-        <img src="/4.jpg" alt="Bannière" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+        <img src="/7.jpg" alt="Bannière" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         <div className="relative z-10 px-6">
           <h1 className="text-5xl md:text-7xl font-black mb-4 uppercase tracking-tighter">Sciences de la Santé</h1>
           <p className="text-xl text-emerald-100 max-w-2xl mx-auto italic">"L'excellence au service de la vie."</p>
