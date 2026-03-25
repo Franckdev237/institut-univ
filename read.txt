@@ -1,0 +1,35 @@
+N'oublie pas le rituel pour que ce soit visible sur https://institut-stvalo-obala.web.app :
+
+Enregistre le fichier.
+
+npm run build
+
+firebase deploy
+
+
+
+groupe-valerien-education-70bb4 : ID
+
+npm install firebase
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCR4vBpHc06UC_mVrfxdywNxIlF50xVJ0U",
+  authDomain: "groupe-valerien-education.firebaseapp.com",
+  projectId: "groupe-valerien-education",
+  storageBucket: "groupe-valerien-education.firebasestorage.app",
+  messagingSenderId: "1043922077362",
+  appId: "1:1043922077362:web:3308129b4e2b09410c6bab",
+  measurementId: "G-Y3MP38WGWY"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
