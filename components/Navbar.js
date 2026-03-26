@@ -17,27 +17,37 @@ export default function Navbar() {
       </a>
 
       {/* Menu de Navigation Desktop */}
-      <div className="hidden md:flex space-x-4 items-center font-semibold text-gray-600 text-sm">
+      <div className="hidden md:flex space-x-3 items-center font-semibold text-gray-600 text-[13px]">
         
-        <a href="/" className="hover:text-blue-800 transition px-2 py-1">
-          Accueil
-        </a>
+        {/* ACCUEIL & A PROPOS */}
+        <div className="relative group px-2 py-1">
+          <a href="/" className="hover:text-blue-800 transition">Accueil</a>
+          {/* Sous-menu qui apparaît au survol */}
+          <div className="absolute hidden group-hover:block bg-white shadow-xl rounded-lg mt-2 py-2 w-40 border border-slate-100 left-0">
+            <a href="/a-propos" className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-800 text-sm">À propos de nous</a>
+          </div>
+        </div>
 
-        {/* École de Santé - AVEC LOGO */}
-        <a href="/sante" className="hover:text-emerald-600 transition px-2 py-1 flex items-center gap-2 border-b-2 border-transparent hover:border-emerald-600">
-          <img src="/sante-logo.png" alt="" className="w-5 h-5 object-contain" />
+        {/* École de Santé */}
+        <a href="/sante" className="hover:text-emerald-600 transition px-2 py-1 flex items-center gap-1 border-b-2 border-transparent hover:border-emerald-600">
+          <img src="/sante-logo.png" alt="" className="w-4 h-4 object-contain" />
           <span>École de Santé</span>
         </a>
 
-        {/* École d'Ingénierie - AVEC LOGO */}
-        <a href="/polytechnique" className="hover:text-orange-600 transition px-2 py-1 flex items-center gap-2 border-b-2 border-transparent hover:border-orange-600">
-          <img src="/poly-logo.png" alt="" className="w-5 h-5 object-contain" />
+        {/* École d'Ingénierie */}
+        <a href="/polytechnique" className="hover:text-orange-600 transition px-2 py-1 flex items-center gap-1 border-b-2 border-transparent hover:border-orange-600">
+          <img src="/poly-logo.png" alt="" className="w-4 h-4 object-contain" />
           <span>École d'Ingénierie</span>
         </a>
 
-        {/* École de Communication - TEXTE UNIQUEMENT */}
+        {/* École de Communication */}
         <a href="/gestion" className="hover:text-purple-600 transition px-2 py-1 border-b-2 border-transparent hover:border-purple-600">
           École de Communication
+        </a>
+
+        {/* NOUVEAU : GALERIE */}
+        <a href="/galerie" className="hover:text-blue-900 transition px-2 py-1">
+          Galerie
         </a>
 
         <a href="/contact" className="hover:text-blue-900 transition px-2 py-1">
