@@ -1,109 +1,165 @@
-import React from 'react';
+"use client";
+import React, { useState, useRef } from 'react';
 
 export default function AdmissionsPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    nom: '',
+    telephone: '',
+    filiere: '',
+    diplome: '',
+    date: new Array().slice.call(new Date().toLocaleDateString())
+  });
+
+  const receiptRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormData({...formData, date: new Date().toLocaleDateString()});
+    setSubmitted(true);
+    window.scrollTo(0, 0);
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  if (submitted) {
+    return (
+      <main className="min-h-screen bg-white py-12 px-4">
+        <div className="max-w-2xl mx-auto border-4 border-double border-slate-300 p-8 rounded-xl bg-white" id="receipt">
+          <div className="text-center border-b-2 border-slate-900 pb-6 mb-6">
+            <img src="/logo.png" alt="Logo" className="w-16 h-16 mx-auto mb-2" />
+            <h1 className="text-xl font-black uppercase">Groupe Valérien Éducation</h1>
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-500 italic">Campus d'Obala - Excellence Académique</p>
+          </div>
+
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-black bg-slate-900 text-white inline-block px-6 py-2 rounded">RÉCÉPISSÉ D'INSCRIPTION</h2>
+            <p className="mt-2 text-sm font-bold">N° GVE-2025-{Math.floor(Math.random() * 10000)}</p>
+          </div>
+
+          <div className="space-y-4 text-lg border-b pb-8">
+            <p><strong>Nom de l'étudiant :</strong> <span className="uppercase">{formData.nom}</span></p>
+            <p><strong>Téléphone :</strong> {formData.telephone}</p>
+            <p><strong>Filière choisie :</strong> {formData.filiere}</p>
+            <p><strong>Diplôme présenté :</strong> {formData.diplome}</p>
+            <p><strong>Date de soumission :</strong> {formData.date}</p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 gap-8 text-center text-sm font-bold uppercase">
+            <div>
+              <p className="mb-12">Signature Étudiant</p>
+              <div className="border-t border-slate-400 pt-2 italic">Fait à Obala, le {formData.date}</div>
+            </div>
+            <div>
+              <p className="mb-12">Cachet de l'Administration</p>
+              <div className="border-t border-slate-400 pt-2 italic">Service des Admissions</div>
+            </div>
+          </div>
+
+          <div className="mt-12 no-print flex flex-col gap-4">
+            <button 
+              onClick={handlePrint}
+              className="w-full bg-blue-900 text-white py-4 rounded-xl font-black shadow-lg hover:bg-slate-800 transition"
+            >
+              🖨️ IMPRIMER MON RÉCÉPISSÉ (PDF)
+            </button>
+            <button 
+              onClick={() => setSubmitted(false)}
+              className="text-slate-500 font-bold text-sm underline"
+            >
+              Modifier mes informations
+            </button>
+          </div>
+        </div>
+
+        <style jsx global>{`
+          @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            main { padding: 0 !important; }
+            .border-4 { border: none !important; }
+          }
+        `}</style>
+      </main>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-slate-50 pb-20">
-      {/* Header de la page */}
-      <div className="bg-blue-900 py-20 text-center text-white relative overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20" 
-          alt="Admissions"
-        />
-        <div className="relative z-10 px-6">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">Portail des Admissions</h1>
-          <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Rejoignez l'Institut Stvalo et donnez une impulsion décisive à votre carrière. 
-            Remplissez le formulaire ci-dessous pour débuter votre pré-inscription.
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-5xl mx-auto -mt-10 px-6 relative z-20">
-        <div className="grid md:grid-cols-3 gap-8">
-          
-          {/* Sidebar d'informations */}
-          <div className="md:col-span-1 space-y-6">
-            <div className="bg-white p-6 rounded-2xl shadow-md border-t-4 border-blue-600">
-              <h3 className="font-bold text-slate-800 mb-4 flex items-center">
-                <span className="mr-2">📁</span> Pièces à fournir
-              </h3>
-              <ul className="text-sm text-slate-600 space-y-3">
-                <li className="flex items-start tracking-tight">✅ Copie certifiée du Baccalauréat</li>
-                <li className="flex items-start tracking-tight">✅ Relevés de notes des 3 dernières années</li>
-                <li className="flex items-start tracking-tight">✅ Photocopie de la CNI</li>
-                <li className="flex items-start tracking-tight">✅ 4 photos d'identité 4x4</li>
-              </ul>
-            </div>
-
-            <div className="bg-emerald-600 p-6 rounded-2xl shadow-md text-white">
-              <h3 className="font-bold mb-2">Besoin d'aide ?</h3>
-              <p className="text-sm opacity-90 mb-4">Notre service d'orientation est disponible pour vous accompagner.</p>
-              <div className="text-sm font-bold underline">admissions@stvalo-univ.cm</div>
-            </div>
+    <main className="min-h-screen bg-slate-50 py-12 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
+        
+        {/* PARTIE GAUCHE : INFOS & DOSSIER */}
+        <div className="w-full lg:w-1/3 space-y-8">
+          <div className="bg-blue-900 p-8 rounded-[2rem] text-white shadow-xl">
+            <h2 className="text-2xl font-black mb-6 border-b border-blue-400 pb-4">Dossier à fournir 📂</h2>
+            <p className="text-sm opacity-80 mb-6 italic">Après votre inscription en ligne, déposez ces pièces au campus d'Obala :</p>
+            <ul className="space-y-4 text-sm font-medium">
+              <li className="flex gap-3">✅ 02 Photos 4x4</li>
+              <li className="flex gap-3">✅ Photocopie de l'Acte de Naissance</li>
+              <li className="flex gap-3">✅ Photocopie du Diplôme (Bac/GCE AL)</li>
+              <li className="flex gap-3">✅ Photocopie de la CNI</li>
+              <li className="flex gap-3">✅ Frais de dossier (Inscription)</li>
+            </ul>
           </div>
 
-          {/* Formulaire principal */}
-          <div className="md:col-span-2 bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-slate-800 mb-8 border-b pb-4">Formulaire de Pré-inscription</h2>
-            
-            <form className="space-y-6">
-              {/* Infos Personnelles */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex flex-col">
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-2">Nom Complet</label>
-                  <input type="text" placeholder="Ex: Jean Moussa" className="p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" />
-                </div>
-                <div className="flex flex-col">
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-2">Téléphone</label>
-                  <input type="tel" placeholder="+237 6xx xxx xxx" className="p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" />
-                </div>
-              </div>
-
-              <div className="flex flex-col">
-                <label className="text-xs font-bold text-slate-500 uppercase mb-2">Adresse Email</label>
-                <input type="email" placeholder="votre@email.com" className="p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" />
-              </div>
-
-              {/* Choix de l'école */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex flex-col">
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-2">École Souhaitée</label>
-                  <select className="p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none appearance-none">
-                    <option>Sélectionnez une école</option>
-                    <option>École de Santé</option>
-                    <option>École Polytechnique</option>
-                    <option>École de Gestion</option>
-                  </select>
-                </div>
-                <div className="flex flex-col">
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-2">Niveau d'entrée</label>
-                  <select className="p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none appearance-none">
-                    <option>Niveau 1 (Bac)</option>
-                    <option>Niveau 2 (Bac+1)</option>
-                    <option>Niveau 3 (Licence/BTS)</option>
-                    <option>Master 1</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="flex flex-col">
-                <label className="text-xs font-bold text-slate-500 uppercase mb-2">Dernier diplôme obtenu</label>
-                <input type="text" placeholder="Ex: Baccalauréat C, D, ou G" className="p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" />
-              </div>
-
-              <div className="pt-4">
-                <button type="submit" className="w-full bg-blue-800 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition shadow-lg flex items-center justify-center">
-                  Soumettre ma candidature
-                  <span className="ml-2">→</span>
-                </button>
-                <p className="text-[10px] text-slate-400 mt-4 text-center italic">
-                  En soumettant ce formulaire, vous acceptez d'être contacté par notre service pédagogique pour finaliser votre inscription.
-                </p>
-              </div>
-            </form>
+          <div className="bg-white p-6 rounded-2xl border-2 border-dashed border-slate-300">
+            <h3 className="font-bold text-slate-800 mb-2">Besoin d'aide ?</h3>
+            <p className="text-sm text-slate-500 mb-4">Contactez le bureau des admissions pour toute question.</p>
+            <a href="tel:+237600000000" className="text-blue-900 font-black">📞 (+237) 6xx xx xx xx</a>
           </div>
         </div>
+
+        {/* PARTIE DROITE : FORMULAIRE */}
+        <div className="w-full lg:w-2/3 bg-white shadow-2xl rounded-[2.5rem] border border-slate-100 overflow-hidden">
+          <div className="bg-slate-900 p-8 text-white">
+            <h1 className="text-3xl font-black uppercase">Candidature en ligne</h1>
+            <p className="text-slate-400 text-sm">Remplissez les champs ci-dessous pour générer votre récépissé.</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="p-8 md:p-10 space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2 font-mono uppercase tracking-tighter">Nom et Prénom *</label>
+                <input required type="text" className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500" placeholder="Ex: ANGO DAGOBERT" 
+                onChange={(e) => setFormData({...formData, nom: e.target.value})} />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2 font-mono uppercase tracking-tighter">Téléphone *</label>
+                <input required type="tel" className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500" placeholder="6xx xx xx xx"
+                onChange={(e) => setFormData({...formData, telephone: e.target.value})} />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2 font-mono uppercase tracking-tighter">École Choisie *</label>
+                <select required className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl" onChange={(e) => setFormData({...formData, filiere: e.target.value})}>
+                  <option value="">-- Sélectionner --</option>
+                  <option value="SANTÉ">ÉCOLE DE SANTÉ</option>
+                  <option value="INGÉNIERIE">ÉCOLE D'INGÉNIERIE</option>
+                  <option value="COMMUNICATION">ÉCOLE DE COMMUNICATION</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2 font-mono uppercase tracking-tighter">Diplôme d'entrée *</label>
+                <select required className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl" onChange={(e) => setFormData({...formData, diplome: e.target.value})}>
+                  <option value="">-- Votre Diplôme --</option>
+                  <option value="BACCALAURÉAT">BACCALAURÉAT</option>
+                  <option value="GCE A-LEVEL">GCE A-LEVEL</option>
+                  <option value="PROBATOIRE">PROBATOIRE</option>
+                  <option value="AUTRE">AUTRE</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" className="w-full bg-blue-900 text-white py-5 rounded-2xl font-black text-lg hover:bg-slate-800 transition shadow-xl mt-4">
+              VALIDER ET GÉNÉRER MON RÉCÉPISSÉ 📄
+            </button>
+          </form>
+        </div>
+
       </div>
     </main>
   );
