@@ -27,7 +27,7 @@ export default function ContactPage() {
                   <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">📞</div>
                   <div>
                     <h3 className="font-black text-slate-800 uppercase text-sm tracking-widest">Appels & Secrétariat</h3>
-                    <p className="text-xl font-bold text-blue-900 mt-1 hover:underline cursor-pointer">(+237) 6xx xx xx xx / 6xx xx xx xx</p>
+                    <p className="text-xl font-bold text-blue-900 mt-1 hover:underline cursor-pointer">(+237) 655209877</p>
                   </div>
                 </div>
 

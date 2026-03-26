@@ -1,71 +1,85 @@
+"use client"; // Obligatoire pour la gestion des cookies et des icônes flottantes
 import "./globals.css";
+import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navbar"; 
 import Footer from "../components/Footer";
+import FloatingSidebar from "../components/FloatingSidebar";
 
-export const metadata = {
-  // 1. TITRE ET DESCRIPTION (SEO de base)
-  title: {
-    default: "Groupe Valérien Éducation | Institut Supérieur d'Obala",
-    template: "%s | GVE Obala" 
-  },
-  description: "Le Groupe Valérien Éducation à Obala (Lékié) propose des formations professionnelles d'excellence en Santé, Ingénierie et Communication. Inscrivez-vous pour la session 2025-2026.",
-  keywords: ["BTS Obala", "Formation professionnelle Cameroun", "École de santé Obala", "Polytechnique Obala", "Groupe Valérien Éducation", "Études supérieures Lékié", "Institut privé Obala"],
-  authors: [{ name: "Ango Dagobert" }],
-
-  // 2. OPEN GRAPH (Pour WhatsApp, Facebook, LinkedIn)
-  openGraph: {
-    title: "Groupe Valérien Éducation | L'Excellence à Obala",
-    description: "Rejoignez un pôle de formation moderne au cœur de la Lékié. Santé, Ingénierie, Communication.",
-    url: 'https://www.groupevalerien.com', // À remplacer par ton futur domaine
-    siteName: 'GVE Obala',
-    images: [
-      {
-        url: '/32.jpg', // Image de partage (doit être dans le dossier public)
-        width: 1200,
-        height: 630,
-        alt: 'Campus Groupe Valérien Éducation Obala',
-      },
-    ],
-    locale: 'fr_FR',
-    type: 'website',
-  },
-
-  // 3. CONFIGURATION DES ICÔNES (Favicon)
-  // Note : Les fichiers doivent être physiquement dans le dossier /public
-  icons: {
-    icon: '/icon.png',
-    shortcut: '/favicon.ico',
-    apple: '/apple-icon.png',
-  },
-
-  // 4. RÉFÉRENCEMENT (Robots Google)
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
-};
+// Note : Dans Next.js 13+ App Router avec "use client", 
+// on définit les metadata dans un fichier séparé ou on utilise une astuce.
+// Pour rester simple et efficace, voici la structure :
 
 export default function RootLayout({ children }) {
+  const [showCookies, setShowCookies] = useState(false);
+
+  // Gestion de l'affichage de la bannière de cookies
+  useEffect(() => {
+    const consent = localStorage.getItem("gve-cookie-consent");
+    if (!consent) {
+      const timer = setTimeout(() => setShowCookies(true), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem("gve-cookie-consent", "true");
+    setShowCookies(false);
+  };
+
   return (
     <html lang="fr">
+      <head>
+        <title>Groupe Valérien Éducation | Institut Supérieur d'Obala</title>
+        <meta name="description" content="Formation d'excellence à Obala (Lékié) : Santé, Ingénierie et Communication. Inscrivez-vous pour la session 2025-2026." />
+        <link rel="icon" href="/icon.png" />
+      </head>
       <body className="antialiased font-sans bg-white text-slate-900">
-        {/* Barre de navigation fixe (News + Menu) */}
+        
+        {/* 1. BARRE LATÉRALE (Style Arts & Métiers) */}
+        <FloatingSidebar />
+
+        {/* 2. NAVIGATION (Avec le bandeau Breaking News) */}
         <Navbar />
 
-        {/* Contenu principal : 
-            pt-[115px] est crucial pour que le contenu ne soit pas caché 
-            sous la Navbar qui est en "fixed".
+        {/* 3. CONTENU PRINCIPAL 
+            Le padding-top (pt-[115px]) évite que le texte soit caché sous la barre fixe
         */}
         <main className="min-h-screen pt-[115px]">
           {children}
         </main>
 
-        {/* Pied de page */}
+        {/* 4. BANNIÈRE COOKIES (Apparaît en bas à droite) */}
+        {showCookies && (
+          <div className="fixed bottom-6 right-6 left-6 md:left-auto md:w-[380px] bg-slate-900 text-white p-6 rounded-[2.5rem] shadow-2xl z-[100] border border-white/10 animate-fade-in-up no-print">
+            <div className="flex items-start gap-4">
+              <span className="text-3xl">🍪</span>
+              <div>
+                <h4 className="font-bold text-lg mb-1">Confidentialité</h4>
+                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                  Nous utilisons des cookies pour optimiser votre navigation sur le site du GVE Obala.
+                </p>
+                <div className="flex gap-3">
+                  <button 
+                    onClick={acceptCookies}
+                    className="flex-1 bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-xl font-bold text-sm transition"
+                  >
+                    Accepter
+                  </button>
+                  <button 
+                    onClick={() => setShowCookies(false)}
+                    className="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 py-2 rounded-xl font-bold text-sm transition"
+                  >
+                    Plus tard
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 5. PIED DE PAGE */}
         <Footer />
+
       </body>
     </html>
   );
