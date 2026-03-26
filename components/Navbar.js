@@ -36,7 +36,7 @@ export default function Navbar() {
         <a href="/" className="flex items-center space-x-3 shrink-0">
           <img src="/logo.png" alt="Logo GVE" className="w-10 h-10 object-contain" />
           <div className="flex flex-col">
-            <span className="text-lg font-black text-blue-900 leading-none tracking-tighter">GVE OBALA</span>
+            <span className="text-lg font-black text-blue-900 leading-none tracking-tighter">GROUPE VALERIEN ETUDIANT OBALA</span>
           </div>
         </a>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {/* Bouton Scolarité (Discret) */}
           <a href="/scolarite" className="hidden xl:block text-blue-700 bg-blue-50 px-3 py-2 rounded-xl border border-blue-100 font-black text-[10px] uppercase">
-            🎓 Tarifs
+            🎓 Scolarité
           </a>
 
           {/* BOUTON PRÉINSCRIPTION (Secondaire - Outline) */}
