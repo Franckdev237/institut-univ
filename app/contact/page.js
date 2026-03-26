@@ -1,85 +1,108 @@
+"use client";
 import React from 'react';
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
-      {/* Header */}
-      <div className="bg-blue-900 py-20 text-center text-white">
-        <h1 className="text-4xl md:text-5xl font-black mb-4">Contactez-nous</h1>
-        <p className="text-blue-200 max-w-xl mx-auto px-6">
-          Une question ? Un besoin d'orientation ? Notre équipe vous accueille tous les jours à notre campus d'Obala.
+    <main className="min-h-screen bg-white">
+      {/* Header Section */}
+      <section className="bg-blue-900 py-20 px-6 text-center text-white">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Contactez-nous</h1>
+        <div className="w-20 h-2 bg-blue-500 mx-auto mb-6"></div>
+        <p className="text-blue-100 max-w-2xl mx-auto font-medium">
+          Le secrétariat du Groupe Valérien Éducation est à votre écoute pour toute question relative aux inscriptions et aux formations.
         </p>
-      </div>
+      </section>
 
       <section className="max-w-7xl mx-auto py-16 px-6">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
-          {/* Informations de contact */}
-          <div className="space-y-8">
+          {/* COLONNE GAUCHE : INFOS DE CONTACT */}
+          <div className="space-y-10">
             <div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-6">Nos Coordonnées</h2>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg text-blue-600 mr-4">📍</div>
+              <h2 className="text-3xl font-black text-slate-900 mb-8 italic">Nos Coordonnées</h2>
+              
+              <div className="space-y-8">
+                {/* Téléphone */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">📞</div>
                   <div>
-                    <p className="font-bold text-slate-800">Localisation</p>
-                    <p className="text-slate-600 italic">Obala, Route de Batchenga, à côté de la station service.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-emerald-100 p-3 rounded-lg text-emerald-600 mr-4">📞</div>
-                  <div>
-                    <p className="font-bold text-slate-800">Téléphone</p>
-                    <p className="text-slate-600">+237 6xx xxx xxx / +237 2xx xxx xxx</p>
+                    <h3 className="font-black text-slate-800 uppercase text-sm tracking-widest">Appels & Secrétariat</h3>
+                    <p className="text-xl font-bold text-blue-900 mt-1 hover:underline cursor-pointer">(+237) 6xx xx xx xx / 6xx xx xx xx</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-purple-100 p-3 rounded-lg text-purple-600 mr-4">✉️</div>
+                {/* WhatsApp */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">💬</div>
                   <div>
-                    <p className="font-bold text-slate-800">Email</p>
-                    <p className="text-slate-600">contact@stvalo-univ.cm</p>
+                    <h3 className="font-black text-slate-800 uppercase text-sm tracking-widest">WhatsApp Direct</h3>
+                    <a href="https://wa.me/+237655209877" className="text-xl font-bold text-emerald-600 mt-1 block hover:underline">Cliquez pour discuter</a>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-orange-100 p-3 rounded-lg text-orange-600 mr-4">🕒</div>
+                {/* Localisation */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-orange-600 group-hover:text-white transition-all shadow-sm">📍</div>
                   <div>
-                    <p className="font-bold text-slate-800">Horaires d'ouverture</p>
-                    <p className="text-slate-600">Lundi - Vendredi : 08h00 - 17h00</p>
-                    <p className="text-slate-600">Samedi : 09h00 - 13h00</p>
+                    <h3 className="font-black text-slate-800 uppercase text-sm tracking-widest">Localisation du Campus</h3>
+                    <p className="text-slate-600 mt-1 leading-relaxed">
+                      Obala, Région du Centre, Cameroun.<br />
+                      Axe Yaoundé-Obala, à proximité de [Préciser un point de repère].
+                    </p>
+                  </div>
+                </div>
+
+                {/* Horaires */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-slate-900 group-hover:text-white transition-all shadow-sm">⏰</div>
+                  <div>
+                    <h3 className="font-black text-slate-800 uppercase text-sm tracking-widest">Horaires d'ouverture</h3>
+                    <p className="text-slate-600 mt-1">Lundi - Vendredi : 08h00 - 16h30</p>
+                    <p className="text-slate-600 italic text-sm">Samedi : Sur rendez-vous uniquement</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Carte Google Maps (Iframe) */}
-            <div className="w-full h-80 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15918.411654446416!2d11.523458620861117!3d4.156548684525832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7c33842c5b%3A0xc078864f77c3a032!2sObala!5e0!3m2!1sfr!2scm!4v1709730000000!5m2!1sfr!2scm" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            {/* Bouton Google Maps */}
+            <div className="bg-slate-50 p-8 rounded-[2.5rem] border-2 border-dashed border-slate-200">
+                <p className="font-bold text-slate-800 mb-4 text-center">Utilisez le GPS pour venir nous voir</p>
+                <a 
+                    href="https://www.google.com/maps?q=Obala,Cameroon" 
+                    target="_blank" 
+                    className="flex items-center justify-center gap-3 bg-blue-900 text-white py-4 px-8 rounded-2xl font-black shadow-xl hover:bg-blue-800 transition transform active:scale-95"
+                >
+                    🗺️ OUVRIR DANS GOOGLE MAPS
+                </a>
             </div>
           </div>
 
-          {/* Formulaire de Message Rapide */}
-          <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100">
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">Envoyez-nous un message</h2>
-            <form className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Votre Nom" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" />
-                <input type="email" placeholder="Votre Email" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" />
+          {/* COLONNE DROITE : FORMULAIRE DE MESSAGE RAPIDE */}
+          <div className="bg-white p-8 md:p-12 rounded-[3rem] shadow-2xl border border-slate-100 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-full -mr-16 -mt-16"></div>
+            
+            <h2 className="text-2xl font-black text-slate-900 mb-6 uppercase">Envoyez un message</h2>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-black uppercase text-slate-400 ml-1">Nom Complet</label>
+                  <input type="text" className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-black uppercase text-slate-400 ml-1">Email / Téléphone</label>
+                  <input type="text" className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600" />
+                </div>
               </div>
-              <input type="text" placeholder="Sujet" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" />
-              <textarea placeholder="Votre message..." rows="5" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-              <button className="w-full bg-blue-900 text-white font-bold py-4 rounded-xl hover:bg-blue-800 transition shadow-lg">
-                Envoyer le message
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase text-slate-400 ml-1">Sujet</label>
+                <input type="text" className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase text-slate-400 ml-1">Votre Message</label>
+                <textarea rows="4" className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600"></textarea>
+              </div>
+              <button type="submit" className="w-full bg-slate-900 text-white py-5 rounded-2xl font-black hover:bg-blue-900 transition-all shadow-lg">
+                ENVOYER MON MESSAGE ✉️
               </button>
             </form>
           </div>

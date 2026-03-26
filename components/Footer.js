@@ -60,7 +60,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center">
               <span className="text-blue-400 mr-3">📞</span>
-              +237 6XX XX XX XX
+              +237 6 55 20 98 77
             </li>
             <li className="flex items-center">
               <span className="text-blue-400 mr-3">✉️</span>
