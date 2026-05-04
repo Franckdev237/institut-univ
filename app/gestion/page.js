@@ -1,140 +1,130 @@
 import React from 'react';
 
-export default function CommunicationPage() {
+export default function CommunicationStrictPremium() {
   const filieres = [
     {
-      id: "communication-org",
-      titre: "BTS Communication des Organisations",
-      slogan: "Informer, valoriser, connecter les institutions au public.",
-      description: "La filière Communication des Organisations forme des professionnels capables de concevoir, gérer et diffuser l’image, les messages et les actions de communication d’une entreprise, d’une institution ou d’une organisation.",
-      details: "Cette formation permet aux étudiants d’acquérir des compétences en :",
-      points: ["Communication interne et externe", "Relations publiques", "Rédaction professionnelle", "Stratégie de communication", "Communication institutionnelle", "Organisation d’événements", "Gestion de l’image"],
-      image: "/24.jpg",
-      couleur: "text-indigo-600",
-      icon: "🏢"
-    },
-    {
       id: "journalisme",
-      titre: "BTS Journalisme",
-      slogan: "Informer avec rigueur, éclairer avec vérité.",
-      description: "La filière Journalisme forme des professionnels capables de rechercher, traiter, rédiger et diffuser l’information à travers les différents supports médiatiques.",
-      details: "Les apprenants y développent des compétences en :",
-      points: ["Techniques de reportage", "Rédaction journalistique", "Interview et enquête", "Presse écrite, radio, TV et web", "Traitement de l’actualité", "Déontologie et éthique", "Communication médiatique"],
+      titre: "Journalisme",
+      description: "Apprenez à rechercher, traiter et diffuser l'information avec rigueur. Cette formation vous prépare aux défis des médias modernes, de la presse écrite au web.",
+      debouches: [
+        "Presse écrite & Agences",
+        "Audiovisuel (Radio/TV)",
+        "Médias en ligne & Web",
+        "Secteurs connexes"
+      ],
+      metiers: [
+        "Journaliste d'entreprise",
+        "Attaché de presse",
+        "Consultant en communication",
+        "Chargé de relations publiques",
+        "Responsable éditorial"
+      ],
       image: "/25.jpg",
-      couleur: "text-blue-600",
+      accent: "from-blue-700 to-blue-900",
       icon: "🎙️"
     },
     {
-      id: "audiovisuel",
-      titre: "BTS Audiovisuel",
-      slogan: "Créer l’image, produire l’émotion, raconter le monde.",
-      description: "La filière Audiovisuel forme des techniciens et créateurs capables de produire, filmer, monter et diffuser des contenus visuels et sonores.",
-      details: "Cette formation permet d’acquérir des compétences en :",
-      points: ["Prise de vue", "Montage vidéo", "Captation et traitement du son", "Réalisation de contenus", "Techniques de production", "Gestion de studio", "Supports multimédias"],
-      image: "/26.jpg",
-      couleur: "text-purple-600",
-      icon: "🎥"
-    },
-    {
-      id: "infographie",
-      titre: "BTS Infographie / Design Graphique",
-      slogan: "Transformer les idées en images qui marquent.",
-      description: "La filière Infographie / Design Graphique forme des professionnels capables de concevoir des supports visuels destinés à la communication, à la publicité et au marketing.",
-      details: "Les étudiants y apprennent à maîtriser :",
-      points: ["Création graphique", "Mise en page", "Identité visuelle", "Publicité visuelle", "Supports imprimés et numériques", "Retouche d’image", "Communication visuelle"],
-      image: "/27.jpg",
-      couleur: "text-pink-600",
-      icon: "🎨"
-    },
-    {
-      id: "publicite-marketing",
-      titre: "BTS Publicité et Marketing Digital",
-      slogan: "Créer l’impact, attirer l’attention, développer la visibilité.",
-      description: "La filière Publicité et Marketing Digital forme des professionnels capables de promouvoir une marque à travers les outils modernes et les plateformes numériques.",
-      details: "Cette formation développe des compétences en :",
-      points: ["Stratégie publicitaire", "Marketing digital", "Réseaux sociaux", "Campagnes promotionnelles", "Branding et image de marque", "Communication commerciale", "Contenu numérique"],
-      image: "/28.jpg",
-      couleur: "text-orange-600",
-      icon: "🚀"
-    },
-    {
-      id: "photographie",
-      titre: "BTS Photographie Professionnelle",
-      slogan: "Capturer l’instant, révéler le message.",
-      description: "La filière Photographie Professionnelle forme des techniciens de l’image capables de réaliser, traiter et valoriser des productions photographiques.",
-      details: "Les apprenants sont formés en :",
-      points: ["Prise de vue", "Cadrage et lumière", "Retouche photo", "Photographie événementielle", "Photographie publicitaire", "Traitement numérique", "Création de contenus visuels"],
-      image: "/29.jpg",
-      couleur: "text-cyan-600",
-      icon: "📸"
-    },
-    {
-      id: "cinema-multimedia",
-      titre: "BTS Métiers du Cinéma et de la Production Multimédia",
-      slogan: "Imaginer, produire, diffuser des contenus qui inspirent.",
-      description: "Cette filière forme des professionnels capables de participer à la création, à la production et à la diffusion de contenus audiovisuels et cinématographiques.",
-      details: "Cette formation permet d’acquérir des compétences en :",
-      points: ["Écriture de scénario", "Réalisation", "Production audiovisuelle", "Montage et postproduction", "Création multimédia", "Gestion de projets créatifs", "Diffusion numérique"],
-      image: "/30.jpg",
-      couleur: "text-rose-600",
-      icon: "🎬"
+      id: "communication-org",
+      titre: "Communication des organisations",
+      description: "Devenez l'expert de l'image de marque et de la stratégie institutionnelle. Maîtrisez les outils pour connecter efficacement les organisations à leurs publics.",
+      debouches: [
+        "Presse écrite & Agences",
+        "Audiovisuel (Radio/TV)",
+        "Médias en ligne & Web",
+        "Secteurs connexes"
+      ],
+      metiers: [
+        "Journaliste d'entreprise",
+        "Attaché de presse",
+        "Consultant en communication",
+        "Chargé de relations publiques",
+        "Responsable éditorial"
+      ],
+      image: "/24.jpg",
+      accent: "from-indigo-700 to-indigo-950",
+      icon: "🏢"
     }
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50">
-      {/* Header */}
-      <header className="bg-indigo-900 py-24 text-center text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-           <img src="/31.jpg" alt="Bannière" className="absolute inset-0 w-full h-full object-cover" />
+    <main className="min-h-screen bg-[#0f172a] text-white font-sans">
+      {/* 🌌 HERO SECTION : CONFORME AU FLYER */}
+      <header className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/31.jpg" alt="ISSAT MVO" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/0 via-[#0f172a]/80 to-[#0f172a]"></div>
         </div>
-        <div className="relative z-10 px-6">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 uppercase tracking-tighter">Communication & Médias</h1>
-          <p className="text-xl text-indigo-200 max-w-3xl mx-auto italic font-light">
-            Formez-vous aux métiers de l'image, de l'information et du digital.
-          </p>
+        
+        <div className="relative z-10 text-center px-6">
+          <p className="text-orange-500 font-black text-xs uppercase tracking-[0.4em] mb-4">Institut Supérieur ISSAT - MVO</p>
+          <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter uppercase italic italic leading-none">
+            INFORMATION ET <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 text-5xl md:text-8xl">COMMUNICATION</span>
+          </h1>
+          <div className="mt-6 bg-orange-600 inline-block px-8 py-2 rounded-lg text-white font-black uppercase italic shadow-lg">
+             RECRUTEMENT SUR ÉTUDE DE DOSSIER
+          </div>
         </div>
       </header>
 
-      {/* Liste des filières */}
-      <section className="max-w-7xl mx-auto py-20 px-6">
-        <div className="grid gap-12">
-          {filieres.map((f, index) => (
-            <div key={f.id} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 items-center bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500`}>
-              
-              {/* Image */}
-              <div className="w-full md:w-1/2 relative group overflow-hidden rounded-2xl">
-                <img src={f.image} alt={f.titre} className="w-full h-80 object-cover transform transition group-hover:scale-110 duration-700" />
-                <div className={`absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full font-bold shadow-sm ${f.couleur}`}>
-                  {f.icon} BTS
-                </div>
-              </div>
-
-              {/* Contenu */}
-              <div className="w-full md:w-1/2">
-                <h2 className={`text-3xl font-black mb-2 leading-tight ${f.couleur}`}>{f.titre}</h2>
-                <p className="text-slate-900 font-bold mb-4 italic">"{f.slogan}"</p>
-                
-                <div className="text-slate-600 mb-6 leading-relaxed">
-                  <p className="mb-3">{f.description}</p>
-                  <p className="font-semibold text-slate-800">{f.details}</p>
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
-                  {f.points.map((p, i) => (
-                    <div key={i} className="flex items-center text-sm font-medium text-slate-700">
-                      <span className={`mr-2 ${f.couleur}`}>●</span> {p}
-                    </div>
-                  ))}
-                </div>
-
-                <a href="/admissions" className="inline-block bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-600 transition shadow-lg">
-                  S'inscrire en {f.id === "communication-org" ? "Communication" : f.titre.split('BTS ')[1]}
-                </a>
+      {/* 🏛️ LES FILIÈRES STRICTES DU FLYER */}
+      <section className="max-w-6xl mx-auto py-20 px-6 space-y-32">
+        {filieres.map((f, index) => (
+          <div key={f.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-start`}>
+            
+            {/* Image Block */}
+            <div className="w-full lg:w-1/2 group relative">
+              <div className={`absolute -inset-2 bg-gradient-to-r ${f.accent} rounded-[2rem] blur-xl opacity-20 group-hover:opacity-30 transition duration-700`}></div>
+              <div className="relative h-[400px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
+                <img src={f.image} alt={f.titre} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/20 to-transparent"></div>
               </div>
             </div>
-          ))}
-        </div>
+
+            {/* Content Block */}
+            <div className="w-full lg:w-1/2">
+              <h2 className="text-4xl font-black mb-6 uppercase italic tracking-tighter flex items-center gap-4">
+                <span className="text-blue-500 text-2xl">▪</span> {f.titre}
+              </h2>
+              <p className="text-slate-400 text-lg mb-10 font-light leading-relaxed">
+                {f.description}
+              </p>
+
+              {/* DÉBOUCHÉS (REPRISE EXACTE DU FLYER) */}
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
+                <h3 className="text-orange-500 font-black text-sm uppercase tracking-widest mb-6 border-b border-orange-500/20 pb-2">
+                  Débouchés & Carrière
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                  <div className="space-y-3">
+                    <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Secteurs :</p>
+                    {f.debouches.map((item, i) => (
+                      <div key={i} className="flex items-center text-sm font-bold text-slate-200">
+                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span> {item}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-3">
+                    <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Métiers :</p>
+                    {f.metiers.map((job, i) => (
+                      <div key={i} className="flex items-center text-sm font-medium text-slate-300">
+                        <span className="text-orange-500 mr-2">○</span> {job}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10">
+                 <button className="bg-white text-[#0f172a] px-10 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:bg-orange-600 hover:text-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                    Postuler en {f.titre}
+                 </button>
+              </div>
+            </div>
+
+          </div>
+        ))}
       </section>
 
       {/* CTA Final */}

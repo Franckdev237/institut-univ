@@ -3,80 +3,100 @@ import React from 'react';
 export default function HomePage() {
   const ecoles = [
     {
-      id: 'sante',
-      nom: "École de Santé",
-      sigle: "ISS",
-      logo: "/logo-sante.png", // Assure-toi d'avoir ces fichiers dans /public
+      id: 'sante-arts',
+      nom: "Santé, Arts & Métiers",
+      logos: ["/logo-sante.png", "/logo-gestion.png"], // Deux logos ici
       color: "border-emerald-500",
-      bg: "hover:bg-emerald-50",
+      gradient: "from-emerald-50 to-white",
+      text: "text-emerald-700",
+      btn: "bg-emerald-600 hover:bg-emerald-700",
       lien: "/sante",
-      description: "Formations MINSANTE & MINESUP : Soins Infirmiers, Sage-femme, Médicotechnique, etc..."
     },
     {
       id: 'polytechnique',
-      nom: "École d'Ingénieurie",
-      sigle: "ESP",
-      logo: "/logo-poly.png",
+      nom: "Institut Polytechnique Saint Valérien D'Obala",
+      logos: ["/logo-poly.png"],
       color: "border-blue-700",
-      bg: "hover:bg-blue-50",
+      gradient: "from-blue-50 to-white",
+      text: "text-blue-800",
+      btn: "bg-blue-800 hover:bg-blue-900",
       lien: "/polytechnique",
-      description: "Informatique, Génie Civil, Génie Mécanique et productique, Génie Chimique et Procédés."
     },
     {
       id: 'gestion',
-      nom: "École de Communication",
-      sigle: "IGC",
-      logo: "/logo-gestion.png",
+      nom: "INSTITUT Supérieur des Sciences Art et Techniques Mbida Valérien D'Obala",
+      logos: ["/logo-gestion.png"],
       color: "border-red-600",
-      bg: "hover:bg-red-50",
+      gradient: "from-red-50 to-white",
+      text: "text-red-700",
+      btn: "bg-red-600 hover:bg-red-700",
       lien: "/gestion",
-      description: "Marketing, Communication Digitale, Journalisme, Communication des Organisations, Audiovisuel, Infographie etc..."
+      
     }
   ];
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* 🌟 HERO SECTION : Identité Visuelle du Groupe */}
-      <section className="py-16 px-6 text-center bg-slate-50 border-b">
-        <div className="max-w-4xl mx-auto">
-          <img src="/logo.png" alt="Groupe Valérien" className="w-24 h-24 mx-auto mb-6 object-contain" />
-          <h1 className="text-4xl md:text-5xl font-black text-blue-900 mb-4 tracking-tighter uppercase italic">
-            Groupe Valérien Éducation
+    <main className="min-h-screen bg-[#F8FAFC] pt-32 pb-20 font-sans">
+      
+      {/* 🌟 HEADER PREMIUM : Les 3 logos alignés */}
+      <section className="px-6 mb-16">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Trio de Logos */}
+          <div className="flex justify-center items-center gap-8 mb-10 animate-in fade-in zoom-in duration-700">
+            <img src="/logo-sante.png" alt="Logo Santé" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 shadow-sm rounded-lg p-1" />
+            <img src="/logo-poly.png" alt="Logo Poly" className="h-20 md:h-24 w-auto object-contain shadow-md rounded-lg p-1 bg-white" />
+            <img src="/logo-gestion.png" alt="Logo Gestion" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 shadow-sm rounded-lg p-1" />
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-black text-[#0F172A] mb-4 tracking-[ -0.05em] uppercase italic">
+            GROUPE VALÉRIEN ÉDUCATION
           </h1>
-          <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
+          <p className="text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
             Bienvenue sur le portail officiel. Choisissez votre établissement pour découvrir nos formations d'excellence à Obala.
           </p>
         </div>
       </section>
 
-      {/* 🏛️ LE HUB : Les 3 Écoles */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* 🏛️ GRID DES ÉCOLES STYLE CARDS PREMIUM */}
+      <section className="px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 xl:gap-12">
           {ecoles.map((ecole) => (
-            <a 
+            <div 
               key={ecole.id} 
-              href={ecole.lien}
-              className={`group p-8 rounded-[2.5rem] border-2 ${ecole.color} ${ecole.bg} transition-all duration-500 shadow-xl hover:shadow-2xl flex flex-col items-center text-center transform hover:-translate-y-2`}
+              className={`group relative bg-gradient-to-b ${ecole.gradient} p-10 rounded-[3rem] border border-slate-200 ${ecole.color} hover:border-2 transition-all duration-500 shadow-xl hover:shadow-2xl flex flex-col items-center text-center`}
             >
-              <div className="w-32 h-32 mb-6 bg-white rounded-full p-4 shadow-inner flex items-center justify-center">
-                <img src={ecole.logo} alt={ecole.sigle} className="w-full h-full object-contain group-hover:scale-110 transition-transform" />
+              {/* Conteneur Logos de l'école */}
+              <div className="flex gap-4 mb-8">
+                {ecole.logos.map((logo, idx) => (
+                  <div key={idx} className="w-24 h-24 bg-white rounded-[1.5rem] p-3 shadow-md flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <img src={logo} alt="Logo" className="max-w-full max-h-full object-contain" />
+                  </div>
+                ))}
               </div>
-              <h2 className="text-2xl font-black text-slate-800 mb-2 leading-tight uppercase">
+              
+              <h2 className={`text-3xl font-black mb-1 italic uppercase tracking-tighter ${ecole.text}`}>
                 {ecole.sigle}
               </h2>
-              <p className="text-sm font-bold text-blue-900 mb-4 uppercase tracking-widest">
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-6">
                 {ecole.nom}
               </p>
-              <p className="text-slate-500 text-sm mb-8 leading-relaxed">
+              
+              <p className="text-slate-600 text-sm mb-10 leading-relaxed min-h-[60px]">
                 {ecole.description}
               </p>
-              <div className="mt-auto inline-flex items-center gap-2 font-black text-xs uppercase bg-slate-900 text-white px-6 py-3 rounded-full group-hover:bg-blue-800 transition-colors">
+
+              <a 
+                href={ecole.lien}
+                className={`${ecole.btn} w-full text-white py-4 rounded-2xl font-black text-[11px] uppercase tracking-[0.1em] shadow-lg shadow-blue-900/10 transform transition-all active:scale-95 group-hover:tracking-[0.15em]`}
+              >
                 Entrer dans l'école ➜
-              </div>
-            </a>
+              </a>
+            </div>
           ))}
         </div>
       </section>
+
     </main>
   );
 }

@@ -1,119 +1,164 @@
 import React from 'react';
 
-export default function PolytechniquePage() {
+export default function PolytechniquePremium() {
   const departements = [
     {
       id: "informatique",
       titre: "Génie Informatique",
-      slogan: "Innover, programmer, bâtir le monde numérique.",
-      // Modification ici : On utilise un tableau pour gérer le saut de ligne proprement
-      description: ["La filière Génie Informatique forme des professionnels capables de concevoir, développer, installer et maintenir des solutions informatiques adaptées aux besoins des entreprises et des organisations.", "Cette formation permet aux apprenants d’acquérir des compétences dans les domaines de :"],
-      points: ["Programmation", "Développement des applications Web & Mobile", "Administration Réseaux","la maintenance informatique", "la gestion des bases de données","la cybersécurité"],
+      description: "Le moteur de la transformation digitale. Ce département forme des experts capables de répondre aux défis de l'intelligence artificielle, du développement logiciel et de la cybersécurité dans un environnement technologique en constante évolution.",
+      filiereTitre: "Filières d'Excellence :",
+      specialites: [
+        "Génie logiciel",
+        "Maintenance des systèmes informatiques",
+        "Informatique industrielle et automatisme"
+      ],
       image: "/18.jpg",
-      couleur: "text-blue-600",
+      accent: "from-blue-600 to-indigo-900",
       icon: "💻"
     },
     {
       id: "civil",
       titre: "Génie Civil",
-      slogan: "Construire aujourd’hui les bases de demain.",
-      description: ["La filière Génie Civil forme des professionnels capables de concevoir, réaliser, superviser et entretenir les ouvrages de construction et les infrastructures nécessaires au développement des villes et des communautés.", "Au cours de cette formation :"],
-      points: ["Études de structures", "Gestion de chantier", "Dessin technique","la topographie","la gestion et le suivi des chantiers","la lecture et l’exploitation des plans"],
+      description: "Bâtir l'avenir et dessiner les cités de demain. Nos formations couvrent l'intégralité du cycle de vie des infrastructures, de la conception topographique à la gestion durable des chantiers et de l'urbanisme moderne.",
+      filiereTitre: "Filières d'Excellence :",
+      specialites: [
+        "Bâtiment",
+        "Travaux publics",
+        "Géomètre-topographe",
+        "Menuiserie et ébénisterie",
+        "Installation sanitaire",
+        "Urbanisme"
+      ],
       image: "/19.jpg",
-      couleur: "text-orange-600",
+      accent: "from-orange-500 to-red-700",
       icon: "🏗️"
     },
     {
       id: "electrique",
       titre: "Génie Électrique",
-      slogan: "Maîtriser l’énergie, éclairer l’avenir.",
-      description: ["La filière Génie Électrique forme des techniciens et professionnels capables d’installer, exploiter, entretenir et sécuriser les systèmes électriques utilisés dans les habitations, les industries et les entreprises.", "Les apprenants développent des compétences en :"],
-      points: ["Installations électriques", "Maintenance industrielle", "électricité générale", "électrotechnique", "maintenance des équipements électriques","automatismes","production et distribution de l’énergie","sécurité électrique"],
+      description: "L'énergie est le sang de l'industrie. Nous formons des techniciens de haut niveau spécialisés dans la gestion des systèmes de puissance et la maintenance critique des équipements haute technologie, notamment dans le secteur médical.",
+      filiereTitre: "Filières d'Excellence :",
+      specialites: [
+        "Électrotechnique",
+        "Maintenance des appareils biomédicaux"
+      ],
       image: "/20.jpg",
-      couleur: "text-yellow-500",
+      accent: "from-blue-800 to-slate-900",
       icon: "⚡"
-    },
-    {
-      id: "mecanique",
-      titre: "Génie Mécanique & Productique",
-      slogan: "Concevoir, fabriquer, optimiser la production.",
-      description: ["La filière Génie Mécanique et Productique forme des professionnels capables de participer à la conception, à la fabrication, à l’entretien et à l’optimisation des systèmes mécaniques et des procédés de production industrielle.", "Cette formation donne des compétences en :"],
-      points: ["la mécanique générale", "Fabrication industrielle", "Maintenance","la gestion de la production","les machines et équipements industriels","la qualité et productivité","l’organisation des procédés de fabrication"],
-      image: "/21.jpg",
-      couleur: "text-red-600",
-      icon: "⚙️"
     },
     {
       id: "chimique",
       titre: "Génie Chimique & Procédés",
-      slogan: "Transformer la matière, créer des solutions pour demain.",
-      description: ["La filière Génie Chimique et Procédé forme des professionnels capables de comprendre, contrôler et optimiser les procédés de transformation de la matière.", "Au cours de cette formation, les apprenants développent :"],
-      points: ["Analyses chimiques", "Contrôle qualité", "Transformation industrielle","chimie appliquée","gestion des unités de production","traitement et valorisation des produits."],
+      description: "À la frontière de la science et de l'industrie, ce département se concentre sur la transformation de la matière. De la chimie générale au contrôle des procédés industriels, nous préparons les acteurs de l'industrie de demain.",
+      filiereTitre: "Filières d'Excellence :",
+      specialites: [
+        "Chimie",
+        "Génie chimique et des procédés"
+      ],
       image: "/22.jpg",
-      couleur: "text-emerald-600",
+      accent: "from-emerald-600 to-teal-900",
       icon: "🧪"
+    },
+    {
+      id: "mecanique",
+      titre: "Génie Mécanique & Productique",
+      description: "Concevoir le mouvement et optimiser la production. Cette filière allie la rigueur de la mécanique classique à l'innovation de la mécatronique automobile pour une polyvalence absolue sur le marché de l'emploi.",
+      filiereTitre: "Filières d'Excellence :",
+      specialites: [
+        "Maintenance industrielle et productive",
+        "Mécanique et électronique automobile (option mécatronique)"
+      ],
+      image: "/21.jpg",
+      accent: "from-red-600 to-rose-950",
+      icon: "⚙️"
     }
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50">
-      <header className="bg-slate-900 py-24 text-center text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-           <img src="/23.jpg" alt="Bannière" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+    <main className="min-h-screen bg-[#0a0a0c] text-white font-sans selection:bg-orange-500">
+      {/* 🌌 HERO SECTION AVANT-GARDE */}
+      <header className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/23.jpg" alt="Background" className="w-full h-full object-cover opacity-40 scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0c]/80 to-[#0a0a0c]"></div>
         </div>
-        <div className="relative z-10 px-6">
-          {/* Correction ici : "ingénierie" */}
-          <h1 className="text-4xl md:text-6xl font-black mb-4 uppercase">Sciences de l'ingénierie</h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto italic">
-            "Devenez un technicien supérieur recherché grâce à nos 2 ans de formation pratique intensive."
+        
+        <div className="relative z-10 text-center px-6">
+          <span className="inline-block px-4 py-1 mb-6 border border-orange-500/50 rounded-full text-orange-500 text-xs font-bold tracking-[0.4em] uppercase animate-pulse">
+            Institut Polytechnique Saint Valérien
+          </span>
+          <h1 className="text-5xl md:text-8xl font-black mb-6 tracking-tighter italic leading-none">
+            ENGINEERING <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">EXCELLENCE</span>
+          </h1>
+          <p className="max-w-2xl mx-auto text-slate-400 text-lg font-medium leading-relaxed">
+            Formations certifiées pour les leaders technologiques de demain. 
+            Recrutement sur étude de dossier pour la session 2026.
           </p>
         </div>
       </header>
 
-      <section className="max-w-7xl mx-auto py-20 px-6">
-        <div className="grid gap-16">
-          {departements.map((dept, index) => (
-            <div key={dept.id} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 items-center bg-white p-8 rounded-3xl shadow-sm border border-slate-100 transition hover:shadow-xl`}>
-              
-              <div className="w-full md:w-1/2 relative group">
-                <img src={dept.image} alt={dept.titre} className="w-full h-80 object-cover rounded-2xl transform transition group-hover:scale-105 duration-500" />
-                <div className={`absolute top-4 left-4 bg-white px-4 py-2 rounded-full font-bold shadow-lg flex items-center ${dept.couleur}`}>
-                  <span className="mr-2 text-xl">{dept.icon}</span> BTS
+      {/* 🏛️ DÉPARTEMENTS ET FILIÈRES PREMIUM */}
+      <section className="max-w-7xl mx-auto py-24 px-6 space-y-32">
+        {departements.map((dept, index) => (
+          <div 
+            key={dept.id} 
+            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}
+          >
+            {/* Visual Block */}
+            <div className="w-full lg:w-1/2 group relative">
+              <div className={`absolute -inset-4 bg-gradient-to-r ${dept.accent} rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-40 transition-opacity`}></div>
+              <div className="relative h-[500px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                <img src={dept.image} alt={dept.titre} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent"></div>
+                <div className="absolute bottom-8 left-8">
+                   <span className="text-6xl mb-4 block drop-shadow-lg">{dept.icon}</span>
                 </div>
               </div>
+            </div>
 
-              <div className="w-full md:w-1/2">
-                <h2 className={`text-3xl font-black mb-2 ${dept.couleur}`}>{dept.titre}</h2>
-                <p className="text-slate-900 font-bold mb-4 italic">"{dept.slogan}"</p>
-                
-                {/* Modification ici pour afficher les deux lignes de description proprement */}
-                <div className="text-slate-600 mb-6 leading-relaxed space-y-2">
-                  <p>{dept.description[0]}</p>
-                  <p className="font-semibold">{dept.description[1]}</p>
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {dept.points.map((point, i) => (
-                    <div key={i} className="flex items-center text-sm font-semibold text-slate-700">
-                      <span className={`mr-2 ${dept.couleur}`}>✔</span> {point}
+            {/* Content Block */}
+            <div className="w-full lg:w-1/2">
+              <h2 className="text-4xl md:text-5xl font-black mb-6 italic uppercase tracking-tighter">
+                {dept.titre}
+              </h2>
+              <p className="text-slate-400 text-lg mb-8 leading-relaxed font-light">
+                {dept.description}
+              </p>
+              
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl mb-10">
+                <h3 className="text-orange-500 font-black text-sm uppercase tracking-widest mb-6 flex items-center">
+                  <span className="w-8 h-[2px] bg-orange-500 mr-4"></span>
+                  {dept.filiereTitre}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {dept.specialites.map((spec, i) => (
+                    <div key={i} className="flex items-start group/item text-slate-200">
+                      <span className="mt-1 mr-3 text-orange-500 group-hover/item:translate-x-1 transition-transform">→</span>
+                      <span className="font-bold text-sm tracking-tight uppercase">{spec}</span>
                     </div>
                   ))}
                 </div>
-
-                <a href="/admissions" className="inline-block bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-600 transition tracking-wide shadow-lg">
-                  S'inscrire en {dept.titre}
-                </a>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
-      <section className="bg-orange-500 py-16 text-center text-white">
-        <p className="mb-8 font-medium">Ne laisse pas passer ta chance de devenir un expert.</p>
-        <a href="/admissions" className="bg-white text-orange-600 px-10 py-4 rounded-full font-black text-lg shadow-2xl hover:bg-slate-900 hover:text-white transition uppercase tracking-tighter">
-          Déposer mon dossier maintenant
-        </a>
+              <button className="group relative px-8 py-4 bg-white text-black font-black rounded-xl overflow-hidden transition-all hover:scale-105 active:scale-95 uppercase text-xs tracking-[0.2em]">
+                <span className="relative z-10 italic">Postuler maintenant</span>
+                <div className={`absolute inset-0 bg-gradient-to-r ${dept.accent} translate-y-full group-hover:translate-y-0 transition-transform`}></div>
+              </button>
+            </div>
+          </div>
+        ))}
+      </section>
+      {/* 📢 CALL TO ACTION FINAL */}
+      <section className="bg-blue-900 py-20 px-6 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-32 h-32 bg-orange-600 rounded-full blur-[100px] opacity-20"></div>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase italic">Prêt à construire votre avenir ?</h2>
+          <p className="text-blue-200 mb-10 font-medium italic">"Rejoignez la nouvelle génération d'ingénieurs à Obala dès la rentrée 2025-2026."</p>
+          <a href="/admissions" className="bg-orange-600 text-white px-12 py-5 rounded-full font-black text-xl shadow-2xl hover:bg-white hover:text-blue-900 transition-all uppercase tracking-tighter inline-block">
+            Déposer mon dossier maintenant
+          </a>
+        </div>
       </section>
     </main>
   );
