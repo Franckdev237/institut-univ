@@ -4,9 +4,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
         
         {/* Colonne 1 : Identité de l'Institut */}
-        <div>
+        <div> 
           <h3 className="text-2xl font-bold mb-6 text-blue-400">
-            Institut Supérieur d'Obala
+            Groupe Valérien Éducation
           </h3>
           <p className="text-slate-400 text-sm leading-relaxed mb-6">
             Une institution académique de référence dédiée à l'excellence. Nous formons les experts de demain en santé, technologie et management au cœur du Cameroun.
@@ -27,17 +27,17 @@ export default function Footer() {
           <ul className="space-y-4 text-slate-300 text-sm">
             <li>
               <a href="/sante" className="hover:text-emerald-400 transition flex items-center">
-                <span className="mr-2">›</span> École de Santé
+                <span className="mr-2">›</span> École Privée Formation du Personnel de Santé 
               </a>
             </li>
             <li>
               <a href="/polytechnique" className="hover:text-orange-400 transition flex items-center">
-                <span className="mr-2">›</span> École Polytechnique
+                <span className="mr-2">›</span> Institut Polytechnique Saint Valérien D'Obala
               </a>
             </li>
             <li>
               <a href="/gestion" className="hover:text-purple-400 transition flex items-center">
-                <span className="mr-2">›</span> École de Gestion
+                <span className="mr-2">›</span> Institut Supérieur Sciences Art et Techniques Mbida Valérien D'Obala
               </a>
             </li>
             <li>
@@ -56,7 +56,7 @@ export default function Footer() {
           <ul className="space-y-4 text-slate-300 text-sm">
             <li className="flex items-start italic">
               <span className="text-blue-400 mr-3">📍</span>
-              Obala, Cameroun <br /> Face à l'entrée principale
+              Obala Cameroun, <br /> face Source OSSONGO 
             </li>
             <li className="flex items-center">
               <span className="text-blue-400 mr-3">📞</span>
@@ -64,7 +64,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center">
               <span className="text-blue-400 mr-3">✉️</span>
-              info@is-obala.cm
+              
             </li>
             <li className="mt-6">
               <span className="bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full uppercase font-bold">
