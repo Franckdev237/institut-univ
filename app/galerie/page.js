@@ -4,8 +4,11 @@ import React, { useState } from 'react';
 export default function GaleriePage() {
   const [filter, setFilter] = useState('all');
 
-  // Liste des photos avec catégories
+  // Liste des photos mise à jour avec tes 3 flyers
   const photos = [
+    { id: 9, src: "/Flyers-01.jpg", title: "Filières Santé (ISSAT-MVO)", cat: "offres" },
+    { id: 10, src: "/Flyers-02.jpg", title: "Polytechnique & Ingénierie", cat: "offres" },
+    { id: 11, src: "/Flyers-03.jpg", title: "Communication & Gestion", cat: "offres" },
     { id: 1, src: "/g1.jpg", title: "Entrée du Campus", cat: "campus" },
     { id: 2, src: "/g2.jpg", title: "Laboratoire de Santé", cat: "cours" },
     { id: 3, src: "/g3.jpg", title: "Atelier Mécanique", cat: "cours" },
@@ -18,6 +21,7 @@ export default function GaleriePage() {
 
   const categories = [
     { id: 'all', label: 'Tout voir' },
+    { id: 'offres', label: 'Offres & Formations' }, // Nouvelle catégorie pour tes flyers
     { id: 'campus', label: 'Le Campus' },
     { id: 'cours', label: 'Cours & Pratique' },
     { id: 'vie', label: 'Vie Étudiante' },
@@ -34,7 +38,7 @@ export default function GaleriePage() {
       <header className="bg-slate-900 py-20 text-center text-white px-6">
         <h1 className="text-4xl md:text-6xl font-black mb-4 uppercase tracking-tighter">Notre Galerie</h1>
         <p className="text-slate-400 max-w-2xl mx-auto italic">
-          Immersion au cœur du Groupe Valérien Éducation : infrastructures, vie académique et moments forts à Obala.
+          Découvrez nos infrastructures et nos offres de formation pour l'année académique 2025-2026 à Obala.
         </p>
       </header>
 
@@ -61,13 +65,20 @@ export default function GaleriePage() {
           {filteredPhotos.map((photo) => (
             <div 
               key={photo.id} 
-              className="group relative overflow-hidden rounded-[2rem] bg-slate-100 aspect-[4/5] cursor-pointer shadow-lg transition-all duration-500 hover:-translate-y-2"
+              className={`group relative overflow-hidden rounded-[2rem] bg-slate-100 aspect-[4/5] cursor-pointer shadow-lg transition-all duration-500 hover:-translate-y-2 ${photo.cat === 'offres' ? 'border-2 border-blue-100' : ''}`}
             >
               <img 
                 src={photo.src} 
                 alt={photo.title} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
+              
+              {/* Badge Spécial pour les Flyers */}
+              {photo.cat === 'offres' && (
+                <div className="absolute top-4 right-4 z-10 bg-amber-400 text-slate-900 text-[10px] font-black px-3 py-1 rounded-full shadow-md uppercase">
+                  Nouveau
+                </div>
+              )}
               
               {/* Overlay au survol */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
@@ -90,14 +101,17 @@ export default function GaleriePage() {
         )}
       </section>
 
-      {/* Section Instagram / Social CTA */}
+      {/* Section Contact CTA */}
       <section className="bg-blue-50 py-16 text-center px-6">
-        <h2 className="text-2xl font-black text-blue-900 mb-4">Suivez-nous au quotidien</h2>
-        <p className="text-slate-600 mb-8">Retrouvez plus de photos et vidéos sur nos réseaux sociaux.</p>
-        <div className="flex justify-center gap-4">
-          <a href="#" className="bg-white p-4 rounded-2xl shadow-md hover:text-blue-600 transition">Facebook</a>
-          <a href="#" className="bg-white p-4 rounded-2xl shadow-md hover:text-pink-600 transition">Instagram</a>
-          <a href="#" className="bg-white p-4 rounded-2xl shadow-md hover:text-red-600 transition">YouTube</a>
+        <h2 className="text-2xl font-black text-blue-900 mb-4 uppercase italic">Une question sur nos formations ?</h2>
+        <p className="text-slate-600 mb-8 max-w-xl mx-auto">Nos conseillers sont disponibles pour vous guider dans votre choix d'orientation au campus d'Obala.</p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/237655209877" className="bg-green-500 text-white font-black px-8 py-4 rounded-2xl shadow-lg hover:bg-green-600 transition flex items-center gap-2">
+            WhatsApp : 655 20 98 77
+          </a>
+          <a href="/admissions" className="bg-blue-900 text-white font-black px-8 py-4 rounded-2xl shadow-lg hover:bg-slate-800 transition">
+            S'inscrire en ligne
+          </a>
         </div>
       </section>
     </main>
