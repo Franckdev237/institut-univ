@@ -61,9 +61,9 @@ export default function AProposPage() {
               <div className="bg-slate-50 p-8 rounded-2xl border-l-4 border-blue-900 my-8">
                 <p className="font-bold text-slate-900 mb-4">Nous mettons à disposition trois établissements complémentaires :</p>
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 font-black text-blue-900 text-sm">
-                  <li className="flex items-center gap-2">● ÉCOLE DE COMMUNICATION</li>
-                  <li className="flex items-center gap-2">● ÉCOLE DE SANTÉ</li>
-                  <li className="flex items-center gap-2">● ÉCOLE D'INGÉNIERIE</li>
+                  <li className="flex items-center gap-2">● INSTITUT SUPERIEUR DES SCIENCES ART et TECHNIQUE </li>
+                  <li className="flex items-center gap-2">● ÉCOLE PRIVEE DE FORMATION DU PERSONNEL DE SANTE</li>
+                  <li className="flex items-center gap-2">● INSTITUT POLYTECHNIQUE SAINT VALERIEN D'OBALA</li>
                 </ul>
               </div>
 
