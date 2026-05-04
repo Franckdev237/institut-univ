@@ -70,7 +70,7 @@ export default function HomePage() {
         <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-blue-50 hover:scale-[1.01] transition-transform duration-500">
           {/* Remplace 'nom-de-ta-banniere.jpg' par le nom réel de ton fichier image */}
           <img 
-            src="/banniere-orientation.jpg" 
+            src="/Banderole-Campagne2.jpg" 
             alt="Journées d'Orientation Académique et Professionnelle Obala 2026" 
             className="w-full h-auto object-cover"
           />
