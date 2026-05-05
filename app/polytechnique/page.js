@@ -84,9 +84,11 @@ export default function PolytechniquePremium() {
         </div>
         
         <div className="relative z-10 text-center px-6">
-          <span className="inline-block px-4 py-1 mb-6 border border-orange-500/50 rounded-full text-orange-500 text-xs font-bold tracking-[0.4em] uppercase animate-pulse">
-            Institut Polytechnique Saint Valérien
+          {/* ✅ POLICE AUGMENTÉE ICI : text-sm -> text-lg et padding ajusté */}
+          <span className="inline-block px-6 py-2 mb-8 border-2 border-orange-500/50 rounded-full text-orange-500 text-lg md:text-xl font-black tracking-[0.2em] uppercase animate-pulse shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+            Institut Polytechnique Saint Valérien d'Obala
           </span>
+          
           <h1 className="text-5xl md:text-8xl font-black mb-6 tracking-tighter italic leading-none">
             ENGINEERING <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">EXCELLENCE</span>
@@ -149,6 +151,7 @@ export default function PolytechniquePremium() {
           </div>
         ))}
       </section>
+
       {/* 📢 CALL TO ACTION FINAL */}
       <section className="bg-blue-900 py-20 px-6 text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-32 h-32 bg-orange-600 rounded-full blur-[100px] opacity-20"></div>
