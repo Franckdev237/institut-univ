@@ -56,15 +56,22 @@ export default function CommunicationStrictPremium() {
         </div>
         
         <div className="relative z-10 text-center px-6">
-          <p className="text-orange-500 font-black text-xs uppercase tracking-[0.4em] mb-4">Institut Supérieur ISSAT - MVO</p>
-          <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter uppercase italic italic leading-none">
-            INFORMATION ET <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 text-5xl md:text-8xl">COMMUNICATION</span>
-          </h1>
-          <div className="mt-6 bg-orange-600 inline-block px-8 py-2 rounded-lg text-white font-black uppercase italic shadow-lg">
-             RECRUTEMENT SUR ÉTUDE DE DOSSIER
-          </div>
-        </div>
+  {/* Changement de text-xs à text-sm pour agrandir légèrement */}
+  <p className="text-orange-500 font-black text-sm uppercase tracking-[0.4em] mb-4">
+    Institut Supérieur des Sciences, Arts et Techniques MBIDA VALÉRIEN D'OBALA
+  </p>
+  
+  <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter uppercase italic leading-none">
+    INFORMATION ET <br />
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 text-5xl md:text-8xl">
+      COMMUNICATION
+    </span>
+  </h1>
+
+  <div className="mt-6 bg-orange-600 inline-block px-8 py-2 rounded-lg text-white font-black uppercase italic shadow-lg">
+    RECRUTEMENT SUR ÉTUDE DE DOSSIER
+  </div>
+</div>
       </header>
 
       {/* 🏛️ LES FILIÈRES STRICTES DU FLYER */}

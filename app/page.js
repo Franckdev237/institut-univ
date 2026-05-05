@@ -4,7 +4,7 @@ export default function HomePage() {
   const ecoles = [
     {
       id: 'sante-arts',
-      nom: "Santé, Arts & Métiers",
+      nom: "Ecole privée de formation du personnels de santé/ISSAT-MVO",
       description: "Formations d'excellence en soins infirmiers, maïeutique et techniques biomédicales sous double agrément MINSANTE MINESUP.",
       logos: ["/logo-sante.png", "/logo-gestion.png"],
       color: "border-emerald-500",
@@ -27,7 +27,7 @@ export default function HomePage() {
     {
       id: 'gestion',
       nom: "Institut Supérieur Sciences Art et Techniques Mbida Valérien D'Obala",
-      description: "Le centre de formation aux métiers de la gestion, de la communication et des sciences sociales.",
+      description: "Ecole de formation aux métiers de la gestion, de la communication et des sciences de santés.",
       logos: ["/logo-gestion.png"],
       color: "border-red-600",
       gradient: "from-red-100 to-white",
@@ -74,7 +74,7 @@ export default function HomePage() {
               <div className="mt-6 text-center">
                 <p className="text-[10px] font-black text-blue-900 uppercase tracking-tighter opacity-70 mb-1">Autorisation Ministérielle</p>
                 <p className="text-[11px] font-bold text-slate-600 leading-tight border-t border-slate-200 pt-2 px-4 italic">
-                  N° 18/06445/L/MINESUP/SG/DDES/ <br /> du 14 Août 2018
+                  AUTORISATION n° 24-07508/L/MINESUP/DDES/ESUP/SDA/ANAP
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function HomePage() {
               <div className="mt-6 text-center">
                 <p className="text-[10px] font-black text-blue-900 uppercase tracking-tighter opacity-70 mb-1">Agrément d'ouverture</p>
                 <p className="text-[11px] font-bold text-slate-600 leading-tight border-t border-slate-200 pt-2 px-4 italic">
-                  N° 19/00045/MINESUP/SG/DDES/ESUP <br /> du 15 Janvier 2019
+                  AUTORISATION n° 26-00351/L/MINESUP/DDES/ESUP/SDA/ANAP
                 </p>
               </div>
             </div>
