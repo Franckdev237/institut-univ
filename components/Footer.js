@@ -27,7 +27,7 @@ export default function Footer() {
           <ul className="space-y-4 text-slate-300 text-sm">
             <li>
               <a href="/sante" className="hover:text-emerald-400 transition flex items-center">
-                <span className="mr-2">›</span> École Privée Formation du Personnel de Santé 
+                <span className="mr-2">›</span> École Privée de Formation du Personnel de Santé MBIDA Valérien d'Obala.
               </a>
             </li>
             <li>
@@ -37,7 +37,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="/gestion" className="hover:text-purple-400 transition flex items-center">
-                <span className="mr-2">›</span> Institut Supérieur Sciences Art et Techniques Mbida Valérien D'Obala
+                <span className="mr-2">›</span> Institut Supérieur Sciences, Art et Techniques Mbida Valérien D'Obala
               </a>
             </li>
             <li>
@@ -60,7 +60,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center">
               <span className="text-blue-400 mr-3">📞</span>
-              +237 6 55 20 98 77
+              +237 65525208/655343466
             </li>
             <li className="flex items-center">
               <span className="text-blue-400 mr-3">✉️</span>
@@ -68,7 +68,7 @@ export default function Footer() {
             </li>
             <li className="mt-6">
               <span className="bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full uppercase font-bold">
-                Ouvert : Lun - Ven (08h - 17h)
+                Ouvert : Lun - Sam
               </span>
             </li>
           </ul>
@@ -78,7 +78,7 @@ export default function Footer() {
       {/* Barre de Copyright */}
       <div className="mt-16 pt-8 border-t border-slate-800 text-center">
         <p className="text-slate-500 text-xs">
-          &copy; {new Date().getFullYear()} <span className="text-slate-300">Institut Stvalo d'Obala</span>. 
+          &copy; {new Date().getFullYear()} <span className="text-slate-300">Groupe Valérien Éducation</span>. 
           Développé avec passion pour l'excellence académique.
         </p>
       </div>
