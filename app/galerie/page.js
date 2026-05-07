@@ -35,7 +35,7 @@ export default function GaleriePage() {
       <header className="bg-slate-900 py-24 text-center text-white px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <h1 className="relative z-10 text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter italic">
-          IMMERSION <span className="text-blue-500">VALÉRIEN</span>
+          IMMERSION <span className="text-blue-500">GROUPE VALÉRIEN EDUCATION</span>
         </h1>
         <p className="relative z-10 text-slate-400 max-w-2xl mx-auto font-light text-lg">
           Explorez l'excellence académique à travers les infrastructures de notre campus d'Obala.
