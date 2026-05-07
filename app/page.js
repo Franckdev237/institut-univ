@@ -43,7 +43,7 @@ export default function HomePage() {
       {/* 📢 BANNIÈRE D'ORIENTATION FLASH */}
       <div className="bg-blue-900 text-white py-3 px-6 text-center overflow-hidden relative border-b border-white/10">
         <p className="text-sm font-bold animate-pulse tracking-widest uppercase">
-          🚀 JOURNÉES D'ORIENTATION À OBALA : DU 11 AU 13 MAI 2026 — VENEZ CONSTRUIRE VOTRE AVENIR !
+          🚀 JOURNÉES D'ORIENTATION ACADEMIQUE ET PROFESSIONNELLE : DU 11 AU 13 MAI 2026 — VENEZ CONSTRUIRE VOTRE AVENIR !
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export default function HomePage() {
               <div className="mt-6 text-center">
                 <p className="text-[10px] font-black text-blue-900 uppercase tracking-tighter opacity-70 mb-1">Agrément d'ouverture</p>
                 <p className="text-[11px] font-bold text-slate-600 leading-tight border-t border-slate-200 pt-2 px-4 italic">
-                  N° 000000/MINSANTE/MINESUP <br /> du 20 Octobre 2018
+                  N°6043/D/MINSANTE/SG/DRH <br /> du 08 JUIN 2022
                 </p>
               </div>
             </div>
