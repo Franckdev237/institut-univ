@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 export default function GaleriePage() {
   const [filter, setFilter] = useState('all');
 
-  // Liste nettoyée : sections vides supprimées
+  // Liste des photos avec intégration de la section PJO
   const photos = [
     { id: 9, src: "/Flyers-01.jpg", title: "Filières Santé (ISSAT-MVO)", cat: "offres" },
     { id: 10, src: "/Flyers-02.jpg", title: "Polytechnique & Ingénierie", cat: "offres" },
@@ -14,11 +14,19 @@ export default function GaleriePage() {
     { id: 4, src: "/g4.jpg", title: "Étudiants en Groupe", cat: "vie" },
     { id: 5, src: "/g5.jpg", title: "Remise de Diplômes", cat: "evenement" },
     { id: 8, src: "/g8.jpg", title: "Pratique Infirmerie", cat: "cours" },
+    
+    // 🚀 PHOTOS DE LA SECTION PJO (Journées d'Orientation)
+    // Tu peux modifier les noms des images (src) par tes propres fichiers mis dans le dossier public/
+    { id: 12, src: "/pjo1.jpg", title: "Atelier d'orientation active", cat: "pjo" },
+    { id: 13, src: "/pjo2.jpg", title: "Échanges bacheliers et experts", cat: "pjo" },
+    { id: 14, src: "/pjo3.jpg", title: "Immersion sur les plateaux techniques", cat: "pjo" },
   ];
 
+  // Catégories incluant désormais PJO
   const categories = [
     { id: 'all', label: 'Tout voir' },
     { id: 'offres', label: 'Offres & Formations' },
+    { id: 'pjo', label: "Journées d'Orientation (PJO)" }, // <-- La nouvelle section
     { id: 'campus', label: 'Le Campus' },
     { id: 'cours', label: 'Cours & Pratique' },
     { id: 'vie', label: 'Vie Étudiante' },
@@ -38,7 +46,7 @@ export default function GaleriePage() {
           IMMERSION <span className="text-blue-500">GROUPE VALÉRIEN EDUCATION</span>
         </h1>
         <p className="relative z-10 text-slate-400 max-w-2xl mx-auto font-light text-lg">
-          Explorez l'excellence académique à travers les infrastructures de notre campus d'Obala.
+          Explorez l'excellence académique à travers les infrastructures de notre campus d'Obala et nos grands événements.
         </p>
       </header>
 
@@ -51,8 +59,8 @@ export default function GaleriePage() {
               onClick={() => setFilter(cat.id)}
               className={`px-8 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all duration-300 ${
                 filter === cat.id 
-                ? 'bg-blue-900 text-white shadow-2xl shadow-blue-900/40 scale-105' 
-                : 'bg-slate-50 text-slate-500 hover:bg-slate-100 border border-slate-200'
+                  ? 'bg-blue-900 text-white shadow-2xl shadow-blue-900/40 scale-105' 
+                  : 'bg-slate-50 text-slate-500 hover:bg-slate-100 border border-slate-200'
               }`}
             >
               {cat.label}
@@ -65,18 +73,33 @@ export default function GaleriePage() {
           {filteredPhotos.map((photo) => (
             <div 
               key={photo.id} 
-              className={`group relative overflow-hidden rounded-[2.5rem] bg-slate-200 aspect-[4/5] cursor-pointer shadow-xl transition-all duration-700 hover:-translate-y-3 ${photo.cat === 'offres' ? 'ring-4 ring-blue-50' : ''}`}
+              className={`group relative overflow-hidden rounded-[2.5rem] bg-slate-200 aspect-[4/5] cursor-pointer shadow-xl transition-all duration-700 hover:-translate-y-3 ${
+                photo.cat === 'offres' ? 'ring-4 ring-blue-50' : ''
+              } ${photo.cat === 'pjo' ? 'ring-4 ring-orange-50' : ''}`}
             >
               <img 
                 src={photo.src} 
                 alt={photo.title} 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                onError={(e) => {
+                  // Fallback temporaire si l'image pjo n'est pas encore importée dans public/
+                  if(photo.cat === 'pjo') {
+                    e.target.src = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop";
+                  }
+                }}
               />
               
-              {/* Badge "Nouveau" pour les Flyers d'offres */}
+              {/* Badge pour les Flyers d'offres */}
               {photo.cat === 'offres' && (
                 <div className="absolute top-6 right-6 z-10 bg-blue-600 text-white text-[9px] font-black px-4 py-1.5 rounded-full shadow-lg uppercase tracking-tighter">
-                  Offre 2025
+                  Offre 2026
+                </div>
+              )}
+
+              {/* Badge distinct pour les photos PJO */}
+              {photo.cat === 'pjo' && (
+                <div className="absolute top-6 right-6 z-10 bg-orange-500 text-white text-[9px] font-black px-4 py-1.5 rounded-full shadow-lg uppercase tracking-tighter">
+                  PJO 2026
                 </div>
               )}
               
