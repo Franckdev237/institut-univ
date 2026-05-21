@@ -39,14 +39,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-slate-50 pb-24 font-sans">
-      
-      {/* 📢 BANNIÈRE D'ORIENTATION FLASH */}
-      <div className="bg-blue-900 text-white py-3 px-6 text-center overflow-hidden relative border-b border-white/10 mt-[34px]">
-        <p className="text-sm font-bold animate-pulse tracking-widest uppercase">
-          🚀 JOURNÉES D'ORIENTATION ACADEMIQUE ET PROFESSIONNELLE : DU 11 AU 13 MAI 2026 — VENEZ CONSTRUIRE VOTRE AVENIR !
-        </p>
-      </div>
-
+    
       {/* 🌟 HEADER PREMIUM : LOGOS ET AUTORISATIONS */}
       <section className="px-6 pt-20 mb-12 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto">
