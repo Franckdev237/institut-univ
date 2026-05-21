@@ -1,7 +1,7 @@
 const videos = [
   {
     id: "1",
-    vimeoId: "76979871", // Remplace par l'ID Vimeo de ce reportage
+    vimeoId: "1194330254", // Remplace par l'ID Vimeo de ce reportage
     titre: "Grand Reportage : Les Journées d'Orientation Académique et Professionnelle",
     description: "Retour en images sur les temps forts des Journées d'Orientation. Découvrez les échanges enrichissants entre nos experts, les bacheliers et les professionnels venus guider la future génération de leaders.",
     categorie: "Événement"

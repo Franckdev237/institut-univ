@@ -140,7 +140,7 @@ export default function HomePage() {
           {/* Intégration Directe de la Vidéo (Droite: 7/12) */}
           <div className="lg:col-span-7 w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black relative group">
             <iframe
-              src="https://player.vimeo.com/video/76979871?autoplay=0&badge=0&autopause=0"
+              src="https://player.vimeo.com/video/1194330254?autoplay=0&badge=0&autopause=0"
               className="absolute top-0 left-0 w-full h-full"
               allow="autoplay; fullscreen; picture-in-picture"
               title="Journées d'orientation"
