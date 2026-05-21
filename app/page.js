@@ -103,48 +103,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 📺 SECTION À LA UNE : VALÉRIEN ÉDUCATION TV (MISE EN AVANT PREMIÈRE VUE) */}
-      <section className="max-w-7xl mx-auto px-6 mb-20 mt-12">
-        <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] p-8 md:p-12 rounded-[3.5rem] shadow-2xl border border-slate-800 relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      {/* 📺 SECTION À LA UNE : VALÉRIEN ÉDUCATION TV (MISE EN AVANT PREMIÈRE VUE PREMIUM) */}
+      <section className="max-w-7xl mx-auto px-6 mb-24 mt-12">
+        <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] p-8 md:p-14 rounded-[3.5rem] shadow-2xl border border-slate-800/60 relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Effets de lueur décoratifs en arrière-plan */}
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-orange-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
           
           {/* Texte d'appel à l'action (Gauche: 5/12) */}
-          <div className="lg:col-span-5 space-y-6 text-left">
-            <div className="flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
-              <span className="text-orange-400 font-black text-[10px] uppercase tracking-[0.4em]">À LA UNE DU CAMPUS</span>
+          <div className="lg:col-span-5 space-y-6 text-left relative z-10">
+            <div className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse shadow-lg shadow-red-500/50"></span>
+              <span className="text-orange-400 font-black text-[10px] uppercase tracking-[0.4em] bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                À LA UNE DU CAMPUS
+              </span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase italic tracking-tighter leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-white uppercase italic tracking-tighter leading-none">
               VALÉRIEN ÉDUCATION <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">TV</span>
             </h2>
             
-            <p className="text-slate-300 font-medium text-lg leading-snug">
-              Grand Reportage : Les Journées d'Orientation Académique et Professionnelle.
-            </p>
-            
-            <p className="text-slate-400 text-sm font-light leading-relaxed">
-              Revivez l’immersion complète des bacheliers, les ateliers d’orientation et l'accompagnement personnalisé mis en œuvre à Obala pour construire les projets professionnels de demain.
-            </p>
+            <div className="space-y-3">
+              <p className="text-slate-200 font-bold text-xl md:text-2xl leading-tight uppercase italic text-balance">
+                Les Journées d'Orientation Académique et Professionnelle
+              </p>
+              <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">
+                Revivez l’immersion complète des bacheliers à Obala. Découvrez nos ateliers d’orientation et l'accompagnement personnalisé mis en œuvre pour construire les projets professionnels de la rentrée 2026-2027.
+              </p>
+            </div>
 
-            <div className="pt-2">
+            <div className="pt-4">
               <a 
                 href="/valerien-education-tv" 
-                className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white font-black text-xs uppercase tracking-widest px-8 py-4 rounded-2xl shadow-xl shadow-orange-950/40 transition-all transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-black text-xs uppercase tracking-widest px-8 py-5 rounded-2xl shadow-xl shadow-orange-950/50 transition-all transform hover:scale-105 active:scale-95"
               >
                 <span>Accéder à la chaîne</span>
-                <span className="animate-ping">▶</span>
+                <span className="bg-white/20 w-6 h-6 rounded-full flex items-center justify-center text-[10px]">▶</span>
               </a>
             </div>
           </div>
 
-          {/* Intégration Directe de la Vidéo (Droite: 7/12) */}
-          <div className="lg:col-span-7 w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black relative group">
-            <iframe
-              src="https://player.vimeo.com/video/1194330254?autoplay=0&badge=0&autopause=0"
-              className="absolute top-0 left-0 w-full h-full"
-              allow="autoplay; fullscreen; picture-in-picture"
-              title="Journées d'orientation"
-            ></iframe>
+          {/* Écran TV Pro Vimeo (Droite: 7/12) */}
+          <div className="lg:col-span-7 w-full relative z-10">
+            <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(249,115,22,0.15)] border-4 border-slate-800 bg-slate-950 group">
+              <iframe
+                src="https://player.vimeo.com/video/1194330254?autoplay=0&badge=0&autopause=0&byline=0&portrait=0&title=0"
+                className="absolute top-0 left-0 w-full h-full"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Journées d'orientation"
+              ></iframe>
+            </div>
           </div>
 
         </div>
