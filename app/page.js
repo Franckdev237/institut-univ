@@ -38,17 +38,17 @@ export default function HomePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-20 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
       
       {/* 📢 BANNIÈRE D'ORIENTATION FLASH */}
-      <div className="bg-blue-900 text-white py-3 px-6 text-center overflow-hidden relative border-b border-white/10">
+      <div className="bg-blue-900 text-white py-3 px-6 text-center overflow-hidden relative border-b border-white/10 mt-[34px]">
         <p className="text-sm font-bold animate-pulse tracking-widest uppercase">
           🚀 JOURNÉES D'ORIENTATION ACADEMIQUE ET PROFESSIONNELLE : DU 11 AU 13 MAI 2026 — VENEZ CONSTRUIRE VOTRE AVENIR !
         </p>
       </div>
 
       {/* 🌟 HEADER PREMIUM : LOGOS ET AUTORISATIONS */}
-      <section className="px-6 pt-20 mb-16 bg-gradient-to-b from-white to-slate-50">
+      <section className="px-6 pt-20 mb-12 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto">
           {/* Grille des Logos Agrandis et Espacés */}
           <div className="flex flex-col md:flex-row justify-center items-start gap-12 md:gap-24 mb-16">
@@ -103,6 +103,53 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 📺 SECTION À LA UNE : VALÉRIEN ÉDUCATION TV (MISE EN AVANT PREMIÈRE VUE) */}
+      <section className="max-w-7xl mx-auto px-6 mb-20 mt-12">
+        <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] p-8 md:p-12 rounded-[3.5rem] shadow-2xl border border-slate-800 relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          {/* Texte d'appel à l'action (Gauche: 5/12) */}
+          <div className="lg:col-span-5 space-y-6 text-left">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+              <span className="text-orange-400 font-black text-[10px] uppercase tracking-[0.4em]">À LA UNE DU CAMPUS</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase italic tracking-tighter leading-tight">
+              VALÉRIEN ÉDUCATION <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">TV</span>
+            </h2>
+            
+            <p className="text-slate-300 font-medium text-lg leading-snug">
+              Grand Reportage : Les Journées d'Orientation Académique et Professionnelle.
+            </p>
+            
+            <p className="text-slate-400 text-sm font-light leading-relaxed">
+              Revivez l’immersion complète des bacheliers, les ateliers d’orientation et l'accompagnement personnalisé mis en œuvre à Obala pour construire les projets professionnels de demain.
+            </p>
+
+            <div className="pt-2">
+              <a 
+                href="/valerien-education-tv" 
+                className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white font-black text-xs uppercase tracking-widest px-8 py-4 rounded-2xl shadow-xl shadow-orange-950/40 transition-all transform hover:scale-105 active:scale-95"
+              >
+                <span>Accéder à la chaîne</span>
+                <span className="animate-ping">▶</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Intégration Directe de la Vidéo (Droite: 7/12) */}
+          <div className="lg:col-span-7 w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black relative group">
+            <iframe
+              src="https://player.vimeo.com/video/76979871?autoplay=0&badge=0&autopause=0"
+              className="absolute top-0 left-0 w-full h-full"
+              allow="autoplay; fullscreen; picture-in-picture"
+              title="Journées d'orientation"
+            ></iframe>
+          </div>
+
+        </div>
+      </section>
+
       {/* 🖼️ BANNIÈRE PUBLICITAIRE */}
       <section className="max-w-6xl mx-auto px-6 mb-24">
         <div className="rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-[12px] border-white transition-all duration-700 hover:shadow-blue-200/50">
@@ -130,7 +177,6 @@ export default function HomePage() {
                 ))}
               </div>
               
-              {/* Utilisation du nom complet uniquement pour un rendu plus pro */}
               <h2 className={`text-2xl font-black mb-6 uppercase tracking-tighter leading-tight italic ${ecole.text}`}>
                 {ecole.nom}
               </h2>
