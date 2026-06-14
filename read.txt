@@ -51,3 +51,6 @@ voici les étapes dru rafaraichissement du site après modification
 git add .
 git commit -m "Ajout complet des 10 filières santé et correction build"
 git push
+
+POUR METTRE EN LIGNE AVEC UN GETON GITHUB QUAND LAUTRE EXPIRE
+CODE:git remote set-url origin https://Franckdev237:TON_NOUVEAU_TOKEN@github.com/Franckdev237/institut-univ.git
